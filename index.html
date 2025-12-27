@@ -9,26 +9,20 @@
 </head>
 <body>
 
-<!-- Giriş Ekranı -->
+<!-- START SCREEN -->
 <div id="start-screen" class="card">
   <h1 class="title">T-ARMY Cehennemi Quizi</h1>
-  <div class="note">
-      <p> Siteye sadece bir kere giriş sağlanabilir o yüzden lütfen soruları dikkatli okuyun.</p>
-      <p> En sonda bulunan seviye belirleme kutucugunu paylaşmayı lütfen unutmayın 🫶🏻</p>
-      <p> İyi eğlenceler 💗</p>
-  </div>
-  <input id="username" type="text" placeholder="Lütfen isminizi girin">
-  <button id="start-btn" class="btn">Giriş</button>
+  <input id="username" type="text" placeholder="İsminizi girin">
+  <button id="start-btn">Giriş Yap</button>
 </div>
 
-<!-- Quiz Ekranı -->
+<!-- QUIZ SCREEN -->
 <div id="quiz-screen" class="card hidden">
-  <div id="quiz-progress">Soru <span id="current-question">1</span>/<span id="total-questions">25</span></div>
   <div id="quiz-form"></div>
-  <button id="finish-btn" class="btn">Testi Bitir</button>
+  <button id="finish-btn">Testi Bitir</button>
 </div>
 
-<!-- Sonuç / Sertifika -->
+<!-- RESULT SCREEN -->
 <div id="result-screen" class="card hidden">
   <h2 id="cert-title"></h2>
   <div id="level-code"></div>
@@ -36,12 +30,10 @@
   <div id="custom-message"></div>
   <div id="score-details"></div>
 
-  <div class="cert-buttons">
-    <button id="share-btn" class="btn">Twitter’da Paylaş</button>
-    <button id="show-answers-btn" class="btn">Doğru Cevapları Göster</button>
-    <div class="golden-disc-note">GOLDEN DISC AWARD’DA JİN İÇİN OY VERMEYİ UNUTMAYIN 💜</div>
-    <a href="https://www.goldendisc.co.kr/" target="_blank" class="golden-disc-btn">Golden Disc Award</a>
-  </div>
+  <button id="share-btn" class="twitter-btn">Twitter’da Paylaş</button>
+  <button id="golden-disc-btn">Golden Disc Award</button>
+  <button id="show-answers-btn">Doğru Cevapları Göster</button>
+
   <div id="answers" class="hidden"></div>
 </div>
 
