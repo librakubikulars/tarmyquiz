@@ -117,7 +117,7 @@ const questions = [
   },
   {
     text: "ödül nedir",
-    image: "https://i.imgur.com/2zEbJ3x_d.webp?maxwidth=760&fidelity=grand",
+    image: "https://i.imgur.com/KKGQR1H_d.webp?maxwidth=760&fidelity=grand",
     options: ["yurt dısı bileti", "iphone 13", "tam altın", "15k lira"],
     correct: 2
   },
