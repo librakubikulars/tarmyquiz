@@ -258,4 +258,12 @@ function showAnswers() {
 
     answersDiv.appendChild(div);
   });
+  // siteye sadece bir kez girme kontrolü
+if (localStorage.getItem("visited")) {
+  document.body.innerHTML = `
+    <h1>erişim engellendi</h1>
+    <p>bu siteye daha önce girdin</p>
+  `;
+} else {
+  localStorage.setItem("visited", "true");
 }
