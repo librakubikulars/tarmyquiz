@@ -229,8 +229,8 @@ finishBtn.onclick = () => {
 
 /************ LEVEL ************/
 function getLevel(score) {
-  if (score >= 25) return { code: "C2", era: "legacy era", message: "senin bir üst seviyen hoseok abla boyle devam" };
-  if (score >= 23) return { code: "C1", era: "prime era", message: "abla bangtan a dediği an siteye damlamıssın" };
+  if (score >= 23) return { code: "C2", era: "legacy era", message: "senin bir üst seviyen hoseok abla boyle devam" };
+  if (score >= 22) return { code: "C1", era: "prime era", message: "abla bangtan a dediği an siteye damlamıssın" };
   if (score >= 18) return { code: "B2", era: "icon era", message: "girl!!! ates ediyosun" };
   if (score >= 15) return { code: "B1", era: "rising era", message: "ortalama bir hakimiyet.. calısılması lazım" };
   if (score >= 10) return { code: "A2", era: "rookie era", message: "bir seylere hakimiz ama hala eksikler var" };
