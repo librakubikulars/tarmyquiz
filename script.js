@@ -116,9 +116,9 @@ const questions = [
     correct: 3
   },
   {
-    text: "ödül nedir",
-    image: "https://i.imgur.com/YUmFajJ_d.webp?maxwidth=760&fidelity=grand",
-    options: ["yurt dısı bileti", "iphone 13", "tam altın", "15k lira"],
+    text: "taehyungun yediği çikolata hangisidir",
+    image: "",
+    options: ["tuavna", "tuana", "tuvana", "tuvaana"],
     correct: 2
   },
 
