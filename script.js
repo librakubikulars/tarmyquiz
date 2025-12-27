@@ -1,4 +1,3 @@
-/************ QUESTIONS ************/
 const questions = [
   { text:"coraline ne yapmıştır?", image:"https://i.imgur.com/c3Lu39x_d.webp?maxwidth=760&fidelity=grand", options:["solo hesabı acıp üyelere antilik","mescitte bl izlemistir","kanserim diye yalan söylemistir","üyelere drag getiren tiviti silmemiştir"], correct:2 },
   { text:"", image:"https://i.imgur.com/j1G30WD_d.webp?maxwidth=760&fidelity=grand", options:["o kadar güzelki ölebilirim","sen bensin ben senim","hawaiden kücük bir kacamak","genc hissetmeyi özlemisiz"], correct:0 },
@@ -27,7 +26,6 @@ const questions = [
   { text:"jongini nereye sikayet ettik", image:"https://i.imgur.com/UCB3urk_d.webp?maxwidth=760&fidelity=grand", options:["savunma bakanlıgı","cimer","kore türkiye elciligi","iç isleri bakanlıgı"], correct:0 }
 ];
 
-/************ ELEMENTS ************/
 const startBtn = document.getElementById("start-btn");
 const startScreen = document.getElementById("start-screen");
 const quizScreen = document.getElementById("quiz-screen");
@@ -40,90 +38,70 @@ const usernameInput = document.getElementById("username");
 
 let userAnswers = {};
 
-/************ START BUTTON ************/
-startBtn.onclick = () => {
-  const name = usernameInput.value.trim();
-  if (!name) {
-    alert("Lütfen isminizi gir aşkım 💅🏻");
-    return;
-  }
-  sessionStorage.setItem("username", name);
+startBtn.onclick = ()=>{
+  const name=usernameInput.value.trim();
+  if(!name){ alert("ismini gir askm💘"); return; }
+  sessionStorage.setItem("username",name);
   startScreen.classList.add("hidden");
   quizScreen.classList.remove("hidden");
   renderQuestions();
-};
+}
 
-/************ RENDER QUESTIONS ************/
-function renderQuestions() {
-  quizForm.innerHTML = "";
-  questions.forEach((q, i) => {
-    const div = document.createElement("div");
-    div.className = "quiz-question";
-    div.innerHTML = `
+function renderQuestions(){
+  quizForm.innerHTML="";
+  questions.forEach((q,i)=>{
+    const div=document.createElement("div");
+    div.className="quiz-question";
+    div.innerHTML=`
       <p><strong>Soru ${i+1}:</strong> ${q.text}</p>
-      ${q.image ? `<img src="${q.image}" style="max-width:100%; border-radius:10px; margin:5px 0;">` : ""}
+      ${q.image?`<img src="${q.image}" style="max-width:100%; border-radius:10px; margin:5px 0;">`:""}
       <div class="quiz-options">
-        ${q.options.map((opt,j)=>
-          `<button type="button" onclick="selectOption(${i},${j},this)">${opt}</button>`
-        ).join("")}
+        ${q.options.map((opt,j)=>`<button type="button" onclick="selectOption(${i},${j},this)">${opt}</button>`).join("")}
       </div>
     `;
     quizForm.appendChild(div);
   });
 }
 
-/************ SELECT OPTION ************/
-window.selectOption = (qIndex,optIndex,btn)=>{
+window.selectOption=(qIndex,optIndex,btn)=>{
   userAnswers[qIndex]=optIndex;
   btn.parentElement.querySelectorAll("button").forEach(b=>b.classList.remove("selected"));
   btn.classList.add("selected");
-  scoreProgress.style.width = `${(Object.keys(userAnswers).length/questions.length)*100}%`;
+  scoreProgress.style.width=`${(Object.keys(userAnswers).length/questions.length)*100}%`;
 }
 
-/************ FINISH BUTTON ************/
-finishBtn.onclick = ()=>{
+finishBtn.onclick=()=>{
   quizScreen.classList.add("hidden");
   resultScreen.classList.remove("hidden");
-
   let score=0,wrong=0,blank=0;
   questions.forEach((q,i)=>{
     if(userAnswers[i]===undefined) blank++;
     else if(userAnswers[i]===q.correct) score++;
     else wrong++;
   });
+  const level=getLevel(score,questions.length);
+  const name=sessionStorage.getItem("username") || "ARMY";
 
-  const level = getLevel(score,questions.length);
-  const name = sessionStorage.getItem("username") || "ARMY";
-
-  // Başlık
-  resultScreen.insertAdjacentHTML("afterbegin", `<h2 style="text-align:center;">~"${name}" 'nin T-ARMY Cehennemi Seviyesi~</h2>`);
-
-  document.getElementById("level-code").innerText = level.code;
+  document.getElementById("user-title").innerText=`~"${name}" 'nin T-ARMY Cehennemi Seviyesi~`;
+  document.getElementById("level-code").innerText=level.code;
   document.getElementById("level-code").classList.add("level-code");
-  document.getElementById("level-era").innerText = level.era;
-  document.getElementById("level-era").classList.add("level-era");
-  document.getElementById("custom-message").innerText = `Doğru: ${score} | Yanlış: ${wrong} | Boş: ${blank}`;
-  document.getElementById("custom-message").classList.add("custom-message");
+  document.getElementById("level-era").innerText=level.era;
+  document.getElementById("custom-message").innerText=`Doğru: ${score} | Yanlış: ${wrong} | Boş: ${blank}`;
 
-  document.getElementById("share-btn").onclick = ()=>{
-    window.open(`https://twitter.com/intent/tweet?text=${name} T-ARMY Cehennemi Quizi sonucum: ${level.code} – ${level.era}`);
-  };
-
-  document.getElementById("show-answers-btn").onclick = showAnswers;
+  document.getElementById("share-btn").onclick=()=>{window.open(`https://twitter.com/intent/tweet?text=${name} T-ARMY Cehennemi Quizi sonucum: ${level.code} – ${level.era}`)};
+  document.getElementById("show-answers-btn").onclick=showAnswers;
 }
 
-/************ LEVELS ************/
 function getLevel(score,total){
   const percent=(score/total)*100;
-  if(percent>=90) return {code:"C2",era:"legacy era",message:"senin bir üst seviyen hoseok abla boyle devam"};
-  if(percent>=80) return {code:"C1",era:"prime era",message:"abla bangtan a dediği an siteye damlamıssın"};
-  if(percent>=70) return {code:"B2",era:"icon era",message:"girl!!! ates ediyosun"};
-  if(percent>=60) return {code:"B1",era:"rising era",message:"ortalama bir hakimiyet.. calısılması lazım"};
-  if(percent>=40) return {code:"A2",era:"rookie era",message:"bir seylere hakimiz ama hala eksikler var"};
-  return {code:"A1",era:"debut era",message:"stan twtda hic mi bulunmadın knk"};
+  if(percent>=90) return {code:"C2",era:"legacy era",message:"senin bir üst seviyen hoseok. abla boyle devam💅🏻"};
+  if(percent>=80) return {code:"C1",era:"prime era",message:"abla bangtan a dediği an siteye damlamıssın✨"};
+  if(percent>=70) return {code:"B2",era:"icon era",message:"girl!!! ates ediyosun💘"};
+  if(percent>=60) return {code:"B1",era:"rising era",message:"ortalama bir hakimiyet.. calısılması lazım🙂‍↕️"};
+  if(percent>=40) return {code:"A2",era:"rookie era",message:"bir seylere hakimiz ama hala eksikler var🙁"};
+  return {code:"A1",era:"debut era",message:"stan twtda hic mi bulunmadın knk😖"};
 }
 
-/************ SHOW ANSWERS ************/
 function showAnswers(){
   answersDiv.classList.remove("hidden");
   answersDiv.innerHTML="";
