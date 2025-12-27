@@ -4,51 +4,54 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>T-ARMY Cehennemi Quizi</title>
+
+  <!-- CSS -->
   <link rel="stylesheet" href="style.css">
+
+  <!-- Fontlar -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Archivo+Black&display=swap" rel="stylesheet">
 </head>
-<body>https://imgur.com/user/zxjnysvzdw/posts
+<body>
 
   <!-- Başlangıç Ekranı -->
   <div id="start-screen" class="card">
-    <h1>T-ARMY Cehennemi Quizi 💜</h1>
+    <h1 class="title">T-ARMY Cehennemi Quizi</h1>
     <div class="note">
-      <p>▪️ Siteye sadece bir kere giriş sağlanabilir o yüzden lütfen soruları dikkatli okuyun.</p>
-      <p>▪️ En sonda bulunan seviye belirleme kutucugunu paylaşmayı lütfen unutmayın 🫶🏻</p>
-      <p>▪️ İyi eğlenceler 💜</p>
+      <p> Siteye sadece bir kere giriş sağlanabilir o yüzden lütfen dikkatli cözun. </p>
+      <p> Sonuç kısmını paylasırsanız cok mutlu olurum. </p>
+      <p> İyi eğlenceler!! </p>
     </div>
-    <input id="username" type="text" placeholder="İsminizi girin">
+    <input id="username" type="text" placeholder="İsminizi yazın">
     <button id="start-btn">Giriş Yap</button>
   </div>
 
   <!-- Quiz Ekranı -->
   <div id="quiz-screen" class="card hidden">
-    <div id="question-counter"></div>
     <div id="score-bar">
       <div id="score-progress"></div>
     </div>
+
     <form id="quiz-form"></form>
     <button id="finish-btn">Testi Bitir</button>
   </div>
 
   <!-- Sonuç Ekranı -->
   <div id="result-screen" class="card hidden">
-    <h2 id="result-title"></h2>
-    <div id="level-code" class="level-code"></div>
-    <div id="level-era" class="level-era"></div>
-    <div id="custom-message" class="custom-message"></div>
-
-    <div class="certificate-section">
-      <div class="certificate-note">
-        GOLDEN DİSC AWARDDA JİN İÇİN OYUNUZU VERMEYİ UNUTMAYIN! Sizi morluyorum 💜 -zehra
-      </div>
-      <a class="twitter-btn" id="share-btn" target="_blank">Twitter'da Paylaş 💜</a>
-      <a class="golden-disc-btn" href="https://www.goldendisc.co.kr/" target="_blank">Golden Disc Award</a>
+    <div id="level-section">
+      <h2 id="user-title"></h2>
+      <h1 id="level-code"></h1>
+      <h2 id="level-era"></h2>
+      <p id="custom-message"></p>
     </div>
-
-    <button id="show-answers-btn">Doğru Cevapları Göster</button>
+    <div class="buttons">
+      <button id="share-btn">Twitter’da Paylaş</button>
+      <button id="show-answers-btn">Doğru Cevapları Göster</button>
+    </div>
     <div id="answers" class="hidden"></div>
+    <a class="golden-disc-btn" href="https://www.goldendisc.co.kr/" target="_blank">Golden Disc Award </a>
   </div>
 
-<script src="script.js"></script>
+  <!-- JS -->
+  <script src="script.js"></script>
 </body>
 </html>
