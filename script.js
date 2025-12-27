@@ -258,6 +258,7 @@ function showAnswers() {
 
     answersDiv.appendChild(div);
   });
+  }
   // siteye sadece bir kez girme kontrolü
 if (localStorage.getItem("visited")) {
   document.body.innerHTML = `
