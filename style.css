@@ -1,5 +1,6 @@
+  /* Genel font Poppins */
 body {
-  font-family: Arial, sans-serif;
+  font-family: 'Poppins', sans-serif;
   background: #f0e6fa;
   margin: 0;
   padding: 0;
@@ -120,6 +121,27 @@ h1, h2 { text-align: center; color: #5e3ca3; }
 
 #answers div { margin: 5px 0; }
 
-.level-code { font-size: 48px; font-weight: bold; color: #5e3ca3; text-align: center; margin-top: 10px; }
-.level-era { font-size: 28px; font-weight: 600; color: #7d4dba; text-align: center; margin-top: 5px; }
-.custom-message { font-size: 16px; text-align: center; margin-top: 10px; color: #4a2d7b; }
+/* SEVİYE KODLARI */
+.level-code { 
+  font-family: 'Archivo Black', sans-serif; 
+  font-size: 64px; 
+  font-weight: bold; 
+  color: #5e3ca3; 
+  text-align: center; 
+  margin-top: 10px; 
+}
+
+.level-era { 
+  font-size: 28px; 
+  font-weight: 600; 
+  color: #7d4dba; 
+  text-align: center; 
+  margin-top: 5px; 
+}
+
+.custom-message { 
+  font-size: 16px; 
+  text-align: center; 
+  margin-top: 10px; 
+  color: #4a2d7b; 
+}
