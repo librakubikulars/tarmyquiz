@@ -1,6 +1,6 @@
 body {
   font-family: Arial, sans-serif;
-  background: #f5f5f5;
+  background: #f0e6fa;
   margin: 0;
   padding: 0;
   display: flex;
@@ -11,43 +11,55 @@ body {
 .hidden { display: none; }
 
 .card {
-  background: #fff;
+  background: #f5f0fa;
   margin: 20px;
   padding: 20px;
   border-radius: 15px;
   width: 90%;
   max-width: 700px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+  border: 2px solid #cbaaf0;
 }
 
-h1, h2 { text-align: center; }
+h1, h2 { text-align: center; color: #5e3ca3; }
 
 .note {
-  background: #ffe4e1;
+  background: #e2d4f0;
   padding: 15px;
   border-radius: 10px;
   margin-bottom: 15px;
+  color: #4a2d7b;
 }
 
 #quiz-form .quiz-question {
-  background: #f0f8ff;
+  background: #f3e8fa;
   margin: 10px 0;
   padding: 15px;
   border-radius: 10px;
+  border: 1px solid #d1b3f0;
 }
 
 .quiz-options button {
   margin: 5px 5px 0 0;
-  padding: 8px 12px;
-  border-radius: 5px;
+  padding: 10px 15px;
+  border-radius: 30px;
   cursor: pointer;
-  border: none;
-  background: #ccc;
+  border: 1px solid #cbaaf0;
+  background: #d9b3f0;
+  color: #3a1d5c;
+  font-weight: bold;
+  transition: all 0.2s;
+}
+
+.quiz-options button:hover {
+  background: #c799f0;
+  color: #fff;
 }
 
 .quiz-options button.selected {
-  background: #1da1f2;
+  background: #7d4dba;
   color: #fff;
+  border: 1px solid #5e3ca3;
 }
 
 #score-bar {
@@ -61,35 +73,45 @@ h1, h2 { text-align: center; }
 #score-progress {
   height: 100%;
   width: 0%;
-  background: #32cd32;
+  background: #a66dd9;
   border-radius: 8px;
   transition: 0.3s;
+}
+
+#question-counter {
+  text-align: center;
+  font-weight: bold;
+  margin-bottom: 10px;
+  color: #5e3ca3;
 }
 
 .certificate-section { text-align: center; margin-top: 20px; }
 
 .certificate-note {
-  background: #f0e68c;
+  background: #cbaaf0;
   padding: 15px;
   border-radius: 10px;
   margin-bottom: 15px;
+  color: #3a1d5c;
+  font-weight: bold;
 }
 
 .twitter-btn {
-  background: #1da1f2;
+  background: #8e5ce0;
   color: white;
   padding: 10px 20px;
-  border-radius: 8px;
+  border-radius: 30px;
   text-decoration: none;
   margin-right: 10px;
   display: inline-block;
+  font-weight: bold;
 }
 
 .golden-disc-btn {
-  background: #ffd700;
+  background: #bfa0f0;
   color: black;
   padding: 10px 20px;
-  border-radius: 8px;
+  border-radius: 30px;
   text-decoration: none;
   display: inline-block;
   margin-top: 10px;
@@ -97,3 +119,7 @@ h1, h2 { text-align: center; }
 }
 
 #answers div { margin: 5px 0; }
+
+.level-code { font-size: 48px; font-weight: bold; color: #5e3ca3; text-align: center; margin-top: 10px; }
+.level-era { font-size: 28px; font-weight: 600; color: #7d4dba; text-align: center; margin-top: 5px; }
+.custom-message { font-size: 16px; text-align: center; margin-top: 10px; color: #4a2d7b; }
