@@ -1,3 +1,69 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BTS Quiz</title>
+<style>
+body { font-family: Arial, sans-serif; background:#f5f5f5; margin:0; padding:0; display:flex; flex-direction:column; align-items:center; }
+.hidden { display:none; }
+.overlay, #start-screen { width:100%; display:flex; justify-content:center; align-items:center; min-height:100vh; }
+.overlay { background: rgba(0,0,0,0.7); position:fixed; top:0; left:0; z-index:1000; }
+.overlay-content { background:#fff; padding:30px; border-radius:15px; width:90%; max-width:500px; text-align:center; }
+.overlay-content input { width:80%; padding:10px; margin-bottom:15px; border-radius:5px; border:1px solid #ccc; font-size:16px; }
+.overlay-content button { padding:10px 20px; border:none; border-radius:5px; background:#ff69b4; color:#fff; cursor:pointer; font-size:16px; }
+.note { text-align:left; background:#ffe4e1; padding:15px; border-radius:10px; margin-bottom:15px; }
+.quiz-question { background:#fff; margin:10px 0; padding:15px; border-radius:10px; }
+.quiz-options button { margin:5px 5px 0 0; padding:8px 12px; border-radius:5px; cursor:pointer; }
+.selected { background:#1da1f2; color:#fff; }
+#score-bar-container { width:90%; max-width:700px; background:#ddd; height:15px; border-radius:8px; margin:10px 0; }
+#score-progress { height:100%; width:0%; background:#32cd32; border-radius:8px; transition:0.3s; }
+.certificate-section { text-align:center; margin-top:20px; display:none; }
+.certificate-note { background:#f0e68c; padding:15px; border-radius:10px; margin-bottom:15px; }
+.twitter-btn { background:#1da1f2; color:white; padding:10px 20px; border-radius:8px; text-decoration:none; margin-right:10px; display:inline-block; }
+.golden-disc-btn { background:#ffd700; color:black; padding:10px 20px; border-radius:8px; text-decoration:none; display:inline-block; margin-top:10px; font-weight:bold; }
+</style>
+</head>
+<body>
+
+<!-- Başlangıç ekranı -->
+<div class="overlay" id="overlay">
+    <div class="overlay-content">
+        <h2>Merhaba 💗 Lütfen İsminizi Girin</h2>
+        <div class="note">
+            <p>▪️ Siteye sadece bir kere giriş sağlanabilir o yüzden lütfen soruları dikkatli okuyun.</p>
+            <p>▪️ En sonda bulunan seviye belirleme kutucugunu paylaşmayı lütfen unutmayın 🫶🏻</p>
+            <p>▪️ İyi eğlenceler 💗</p>
+        </div>
+        <input type="text" id="username" placeholder="İsminizi yazın">
+        <br>
+        <button id="start-btn">Başla</button>
+    </div>
+</div>
+
+<!-- Quiz ekranı -->
+<div id="quiz-screen" class="hidden" style="width:100%; max-width:700px; padding:10px;">
+  <div id="quiz-form"></div>
+  <div id="score-bar-container"><div id="score-progress"></div></div>
+  <button id="finish-btn">Bitir ve Seviye Gör</button>
+</div>
+
+<!-- Sonuç ekranı -->
+<div id="result-screen" class="hidden" style="width:100%; max-width:700px; padding:10px;">
+  <div id="level-code"></div>
+  <div id="level-era"></div>
+  <div id="custom-message"></div>
+  <div class="certificate-section" id="certificate-section">
+      <div class="certificate-note">GOLDEN DİSC AWARDDA JİN İÇİN OYUNUZU VERMEYİ UNUTMAYIN! Sizi morluyorum 💜 -zehra</div>
+      <a class="twitter-btn" id="share-btn" target="_blank">Twitter'da Paylaş</a>
+      <br>
+      <a class="golden-disc-btn" href="https://www.goldendisc.co.kr/" target="_blank">Golden Disc Award</a>
+  </div>
+  <button id="show-answers-btn">Cevapları Göster</button>
+  <div id="answers" class="hidden"></div>
+</div>
+
+<script>
 /************ QUESTIONS ************/
 const questions = [
   {
@@ -154,7 +220,7 @@ const questions = [
 
 /************ ELEMENTS ************/
 const startBtn = document.getElementById("start-btn");
-const startScreen = document.getElementById("start-screen");
+const overlay = document.getElementById("overlay");
 const quizScreen = document.getElementById("quiz-screen");
 const resultScreen = document.getElementById("result-screen");
 const quizForm = document.getElementById("quiz-form");
@@ -181,7 +247,7 @@ startBtn.onclick = () => {
   localStorage.setItem("visited", "true");
   localStorage.setItem("username", name);
 
-  startScreen.classList.add("hidden");
+  overlay.classList.add("hidden");
   quizScreen.classList.remove("hidden");
   renderQuestions();
 };
@@ -194,7 +260,7 @@ function renderQuestions() {
     div.className = "quiz-question";
     div.innerHTML = `
       <p>${q.text}</p>
-      ${q.image ? `<img src="${q.image}" class="question-img">` : ""}
+      ${q.image ? `<img src="${q.image}" class="question-img" style="max-width:100%; border-radius:10px;">` : ""}
       <div class="quiz-options">
         ${q.options.map((opt, j) =>
           `<button type="button" onclick="selectOption(${i}, ${j}, this)">${opt}</button>`
@@ -210,12 +276,8 @@ window.selectOption = (qIndex, optIndex, btn) => {
   userAnswers[qIndex] = optIndex;
   btn.parentElement.querySelectorAll("button").forEach(b => b.classList.remove("selected"));
   btn.classList.add("selected");
-  updateScoreBar();
-};
-
-function updateScoreBar() {
   scoreProgress.style.width = `${(Object.keys(userAnswers).length / questions.length) * 100}%`;
-}
+};
 
 /************ FINISH BUTTON ************/
 finishBtn.onclick = () => {
@@ -232,12 +294,11 @@ finishBtn.onclick = () => {
   const level = getLevel(score, questions.length);
   const name = localStorage.getItem("username") || "ARMY";
 
-  document.getElementById("level-code").innerHTML = `<h1 style="text-align:center; font-size: 64px; margin: 0;">${level.code}</h1>`;
-  document.getElementById("level-era").innerHTML = `<h2 style="text-align:center; font-size: 28px; margin: 0;">${level.era}</h2>`;
-  document.getElementById("custom-message").innerHTML = `<p style="text-align:center; font-size: 16px;">${level.message}</p><p style="text-align:center;"><strong>Doğru:</strong> ${score} | <strong>Yanlış:</strong> ${wrong} | <strong>Boş:</strong> ${blank}</p>`;
+  document.getElementById("level-code").innerHTML = `<h1 style="text-align:center; font-size:64px;">${level.code}</h1>`;
+  document.getElementById("level-era").innerHTML = `<h2 style="text-align:center; font-size:28px;">${level.era}</h2>`;
+  document.getElementById("custom-message").innerHTML = `<p style="text-align:center;">${level.message}</p><p style="text-align:center;"><strong>Doğru:</strong> ${score} | <strong>Yanlış:</strong> ${wrong} | <strong>Boş:</strong> ${blank}</p>`;
   
-  // Sertifika başlığı
-  document.getElementById("level-code").insertAdjacentHTML("beforebegin", `<h2 style="text-align:center; margin-bottom:10px;">~"${name}" T-ARMY Cehennemi Sertikası~</h2>`);
+  document.getElementById("certificate-section").style.display = "block";
 
   document.getElementById("share-btn").onclick = () => {
     window.open(`https://twitter.com/intent/tweet?text=${name} T-ARMY Cehennemi Quizi sonucum: ${level.code} – ${level.era}`);
@@ -267,12 +328,15 @@ function showAnswers() {
     div.innerHTML = `<p>${q.text}</p>`;
     q.options.forEach((opt, j) => {
       const optDiv = document.createElement("div");
-      optDiv.className = "answer-option";
-      if (j === q.correct) optDiv.classList.add("correct");
-      if (userAnswers[i] === j && j !== q.correct) optDiv.classList.add("wrong");
       optDiv.innerText = opt;
+      if (j === q.correct) optDiv.style.color = "green";
+      if (userAnswers[i] === j && j !== q.correct) optDiv.style.color = "red";
       div.appendChild(optDiv);
     });
     answersDiv.appendChild(div);
   });
 }
+</script>
+
+</body>
+</html>
