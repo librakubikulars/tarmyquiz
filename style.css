@@ -1,26 +1,154 @@
-body { font-family: 'Poppins', sans-serif; background:#f8f5fd; margin:0; display:flex; flex-direction:column; align-items:center; }
-.card { background:white; padding:20px; border-radius:15px; max-width:700px; width:90%; margin:20px 0; box-shadow:0 5px 15px rgba(0,0,0,0.1); }
-.note { background:#f2e6ff; padding:15px; border-radius:10px; margin-bottom:15px; font-size:14px; }
-input { width:90%; padding:10px; margin-bottom:15px; border-radius:20px; border:1px solid #ccc; font-size:16px; }
-.btn { width:100%; padding:12px 0; border-radius:25px; border:none; background:white; font-size:16px; font-weight:600; cursor:pointer; margin-top:10px; transition:0.3s; }
-.btn:hover { background:#cbbcff; }
-.hidden { display:none; }
-.quiz-question { margin:15px 0; }
-.quiz-question img { max-width:100%; border-radius:10px; margin:10px 0; }
-.quiz-options { display:flex; flex-wrap:wrap; gap:10px; }
-.quiz-options button { flex:1 1 45%; padding:10px; border-radius:25px; border:none; cursor:pointer; background:white; transition:0.3s; font-size:14px; font-weight:600; }
-.quiz-options button:hover { background:#cbbcff; }
-.quiz-options .selected { background:#a07fff; color:white; }
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: #EDE7F6;
+  color: #000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+}
 
-#quiz-progress { margin-bottom:10px; font-weight:600; }
+.card {
+  background: #fff;
+  border-radius: 15px;
+  padding: 30px;
+  max-width: 700px;
+  width: 90%;
+  text-align: center;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
 
-#level-code { font-family:'Archivo Black', sans-serif; font-size:64px; margin:10px 0; }
-#level-era { font-size:28px; margin:5px 0; }
-#custom-message { font-size:16px; margin:5px 0; }
-#score-details { font-size:14px; margin:5px 0; }
-.cert-buttons { display:flex; flex-direction:column; gap:10px; margin-top:15px; }
-.golden-disc-note { font-weight:600; color:#5e3aff; text-align:center; margin-bottom:5px; }
-.golden-disc-btn { display:block; width:100%; padding:12px 0; border-radius:25px; font-weight:700; font-size:16px; text-align:center; background:#ffd700; color:black; text-decoration:none; }
-#answers { margin-top:15px; }
-.answer-question { margin-bottom:10px; }
-.answer-option { padding:5px 10px; border-radius:5px; margin:3px 0; }
+h1.title {
+  margin-bottom: 20px;
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+input[type="text"] {
+  width: 80%;
+  padding: 12px;
+  margin-bottom: 20px;
+  border-radius: 25px;
+  border: 1px solid #ccc;
+  font-size: 16px;
+  text-align: center;
+}
+
+button {
+  padding: 12px 25px;
+  font-size: 18px;
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: 0.3s;
+  margin: 10px 0;
+}
+
+#start-btn, #finish-btn {
+  background-color: #6A1B9A;
+  color: #fff;
+}
+
+#start-btn:hover, #finish-btn:hover {
+  background-color: #7B1FA2;
+}
+
+.quiz-question {
+  background: #fff;
+  padding: 15px;
+  margin: 15px 0;
+  border-radius: 12px;
+  text-align: left;
+}
+
+.quiz-options {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.quiz-options button {
+  flex: 1 1 45%;
+  background: #fff;
+  color: #000;
+}
+
+.quiz-options button:hover {
+  background: #D1C4E9;
+}
+
+.selected {
+  background: #6A1B9A !important;
+  color: #fff;
+}
+
+img.question-img {
+  max-width: 100%;
+  border-radius: 12px;
+  margin: 10px 0;
+}
+
+.twitter-btn {
+  background-color: #1DA1F2;
+  color: white;
+  display: block;
+  width: 90%;
+  margin: 10px auto;
+}
+
+.twitter-btn:hover {
+  background-color: #0d95e8;
+}
+
+#golden-disc-btn {
+  background-color: #FFD700;
+  color: black;
+  display: block;
+  width: 90%;
+  margin: 10px auto;
+}
+
+#golden-disc-btn:hover {
+  background-color: #FFC107;
+}
+
+#answers {
+  text-align: left;
+  margin-top: 20px;
+}
+
+#answers div {
+  margin-bottom: 10px;
+}
+
+.correct {
+  color: green;
+}
+
+.wrong {
+  color: red;
+}
+
+#level-code {
+  font-family: 'Archivo Black', sans-serif;
+  font-size: 50px;
+  margin: 10px 0;
+}
+
+#level-era {
+  font-size: 28px;
+  margin: 10px 0;
+}
+
+#custom-message {
+  font-size: 18px;
+  margin: 10px 0;
+}
+
+#score-details {
+  font-size: 16px;
+  margin: 10px 0;
+}
