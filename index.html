@@ -9,35 +9,38 @@
 </head>
 <body>
 
-<!-- START SCREEN -->
+<!-- Giriş Ekranı -->
 <div id="start-screen" class="card">
   <h1 class="title">T-ARMY Cehennemi Quizi</h1>
   <div class="note">
-    <p>▪️ Siteye sadece bir kere giriş sağlanabilir, lütfen soruları dikkatli okuyun.</p>
-    <p>▪️ En sonda bulunan seviye belirleme kutucuğunu paylaşmayı unutmayın 🫶🏻</p>
-    <p>▪️ İyi eğlenceler </p>
+    <p> Siteye sadece bir kere giriş sağlanabilir o yüzden lütfen soruları dikkatli okuyun.</p>
+    <p>En sonda bulunan seviye belirleme kutucuğunu paylaşmayı lütfen unutmayın 🫶🏻</p>
+    <p>İyi eğlenceler 💗</p>
   </div>
-  <input id="username" type="text" placeholder="İsminizi girin">
-  <button id="start-btn" class="btn">Giriş</button>
+  <input type="text" id="username" placeholder="Lütfen isminizi girin">
+  <button id="start-btn" class="btn-lilac">Giriş</button>
 </div>
 
-<!-- QUIZ SCREEN -->
+<!-- Quiz Ekranı -->
 <div id="quiz-screen" class="card hidden">
-  <div id="quiz-form"></div>
-  <button id="finish-btn" class="btn">Testi Bitir</button>
+  <div id="question-counter"></div>
+  <form id="quiz-form"></form>
+  <button id="finish-btn" class="btn-white">Testi Bitir</button>
 </div>
 
-<!-- RESULT SCREEN -->
+<!-- Sonuç/Sertifika Ekranı -->
 <div id="result-screen" class="card hidden">
-  <h1 id="result-title"></h1>
-  <h2 id="level-code"></h2>
-  <h3 id="level-era"></h3>
-  <p id="custom-message"></p>
-  <p id="score-summary"></p>
-  <p class="golden-note">GOLDEN DISC AWARD’DA JIN İÇİN OY VERMEYİ UNUTMAYIN </p>
-  <button id="vote-btn" class="btn yellow">VOTE</button>
-  <button id="share-btn" class="btn">Twitter'da Paylaş</button>
-  <button id="show-answers-btn" class="btn">Doğru Cevapları Göster</button>
+  <h2 id="cert-title"></h2>
+  <div id="level-code"></div>
+  <div id="level-era"></div>
+  <div id="custom-message"></div>
+  <div id="score-details"></div>
+
+  <div class="certificate-note">GOLDEN DISC AWARD’DA JIN İÇİN OYUNUZU UNUTMAYIN 💜</div>
+  <a class="golden-disc-btn" href="https://www.goldendisc.co.kr/" target="_blank">Vote Golden Disc</a>
+  <a id="share-btn" class="btn-white">Twitter’da Paylaş</a>
+  <button id="show-answers-btn" class="btn-white">Doğru Cevapları Göster</button>
+
   <div id="answers" class="hidden"></div>
 </div>
 
