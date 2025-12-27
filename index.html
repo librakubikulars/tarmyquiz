@@ -4,8 +4,8 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>T-ARMY Cehennemi Quizi</title>
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Archivo+Black&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Archivo+Black&display=swap" rel="stylesheet">
 </head>
 <body>
 
@@ -13,22 +13,22 @@
 <div id="start-screen" class="card">
   <h1 class="title">T-ARMY Cehennemi Quizi</h1>
   <div class="note">
-    <p> Siteye sadece bir kere giriş sağlanabilir o yüzden lütfen soruları dikkatli okuyun.</p>
-    <p>En sonda bulunan seviye belirleme kutucuğunu paylaşmayı lütfen unutmayın 🫶🏻</p>
-    <p>İyi eğlenceler 💗</p>
+      <p> Siteye sadece bir kere giriş sağlanabilir o yüzden lütfen soruları dikkatli okuyun.</p>
+      <p> En sonda bulunan seviye belirleme kutucugunu paylaşmayı lütfen unutmayın 🫶🏻</p>
+      <p> İyi eğlenceler 💗</p>
   </div>
-  <input type="text" id="username" placeholder="Lütfen isminizi girin">
-  <button id="start-btn" class="btn-lilac">Giriş</button>
+  <input id="username" type="text" placeholder="Lütfen isminizi girin">
+  <button id="start-btn" class="btn">Giriş</button>
 </div>
 
 <!-- Quiz Ekranı -->
 <div id="quiz-screen" class="card hidden">
-  <div id="question-counter"></div>
-  <form id="quiz-form"></form>
-  <button id="finish-btn" class="btn-white">Testi Bitir</button>
+  <div id="quiz-progress">Soru <span id="current-question">1</span>/<span id="total-questions">25</span></div>
+  <div id="quiz-form"></div>
+  <button id="finish-btn" class="btn">Testi Bitir</button>
 </div>
 
-<!-- Sonuç/Sertifika Ekranı -->
+<!-- Sonuç / Sertifika -->
 <div id="result-screen" class="card hidden">
   <h2 id="cert-title"></h2>
   <div id="level-code"></div>
@@ -36,11 +36,12 @@
   <div id="custom-message"></div>
   <div id="score-details"></div>
 
-  <div class="certificate-note">GOLDEN DISC AWARD’DA JIN İÇİN OYUNUZU UNUTMAYIN 💜</div>
-  <a class="golden-disc-btn" href="https://www.goldendisc.co.kr/" target="_blank">Vote Golden Disc</a>
-  <a id="share-btn" class="btn-white">Twitter’da Paylaş</a>
-  <button id="show-answers-btn" class="btn-white">Doğru Cevapları Göster</button>
-
+  <div class="cert-buttons">
+    <button id="share-btn" class="btn">Twitter’da Paylaş</button>
+    <button id="show-answers-btn" class="btn">Doğru Cevapları Göster</button>
+    <div class="golden-disc-note">GOLDEN DISC AWARD’DA JİN İÇİN OY VERMEYİ UNUTMAYIN 💜</div>
+    <a href="https://www.goldendisc.co.kr/" target="_blank" class="golden-disc-btn">Golden Disc Award</a>
+  </div>
   <div id="answers" class="hidden"></div>
 </div>
 
