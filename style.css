@@ -1,32 +1,145 @@
-/* FONTS */
-body { font-family: 'Poppins', sans-serif; margin:0; padding:0; background:#f8f4fc; display:flex; justify-content:center; align-items:flex-start; min-height:100vh; }
-.screen { width:100%; display:flex; justify-content:center; align-items:flex-start; padding:30px; }
-.card { background:white; border-radius:12px; padding:25px; max-width:700px; width:100%; box-shadow:0 2px 15px rgba(0,0,0,0.05); margin-bottom:30px; }
-.title { text-align:center; color:#5b3cc4; margin-bottom:15px; font-weight:700; }
-.note { background:#f3e8ff; padding:15px; border-radius:10px; margin-bottom:15px; color:#3b1d75; }
-input[type="text"] { width:90%; padding:12px; margin-bottom:15px; border-radius:8px; border:1px solid #ccc; font-size:16px; display:block; margin-left:auto; margin-right:auto; }
-button, .twitter-btn, .golden-disc-btn { cursor:pointer; border:none; border-radius:8px; padding:10px 20px; font-weight:600; margin-top:10px; text-decoration:none; display:inline-block; text-align:center; }
-.btn-purple { background:#b99fff; color:white; }
-.twitter-btn { background:#a583ff; color:white; }
-.golden-disc-btn { background:#ffd700; color:black; font-weight:bold; }
+/* Genel Ayarlar */
+body {
+  font-family: 'Poppins', sans-serif;
+  background: #f9f5ff;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 20px;
+}
 
-.hidden { display:none; }
+.card {
+  background: #fff;
+  border-radius: 15px;
+  padding: 20px;
+  width: 100%;
+  max-width: 700px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  margin-bottom: 20px;
+}
 
-.quiz-question { background:#fff; margin:15px 0; padding:15px; border-radius:10px; }
-.quiz-question p { font-weight:600; margin-bottom:10px; }
-.quiz-options { display:flex; flex-direction:column; }
-.quiz-options button { margin:5px 0; background:#e8defc; color:#3b1d75; }
-.quiz-options button.selected { background:#5b3cc4; color:white; }
+h1,h2,h3,p {
+  margin: 10px 0;
+  text-align: center;
+}
 
-#score-bar-container { width:100%; background:#ddd; border-radius:10px; height:12px; margin-bottom:20px; }
-#score-progress { width:0%; height:100%; background:#b99fff; border-radius:10px; transition:0.3s; }
+.title {
+  font-weight: 700;
+  font-size: 32px;
+  color: #6a4fcf;
+}
 
-.result-card h1 { font-family: 'Archivo Black', sans-serif; font-size:60px; margin:5px 0; }
-.result-card h2 { font-size:28px; margin:5px 0; }
-.certificate-note { background:#f3e8ff; padding:15px; border-radius:10px; text-align:center; font-weight:600; margin-top:15px; }
+.note {
+  background: #f3e8ff;
+  padding: 15px;
+  border-radius: 10px;
+  font-size: 14px;
+  margin-bottom: 15px;
+}
 
-#answers { margin-top:15px; }
-#answers .answer-question { margin-bottom:15px; }
-#answers .answer-question div { padding:6px 10px; border-radius:6px; margin:3px 0; }
-#answers .correct { background:#c6f6d5; color:#22543d; }
-#answers .wrong { background:#fed7d7; color:#742a2a; }
+input[type=text] {
+  width: 80%;
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-size: 16px;
+  display: block;
+  margin: 0 auto 15px auto;
+}
+
+.btn {
+  display: block;
+  width: 80%;
+  margin: 10px auto;
+  padding: 10px 0;
+  border-radius: 25px;
+  border: none;
+  font-size: 16px;
+  font-weight: 600;
+  background: #fff;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.btn:hover {
+  background: #d8b4ff;
+  color: #fff;
+}
+
+.yellow {
+  background: #ffd700;
+  color: black;
+}
+
+.yellow:hover {
+  background: #ffea70;
+}
+
+/* Quiz Questions */
+.quiz-question {
+  margin-bottom: 20px;
+}
+
+.quiz-question p {
+  font-weight: 600;
+  font-size: 16px;
+  text-align: left;
+}
+
+.quiz-options {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.quiz-options button {
+  background: #fff;
+  border: 1px solid #d1c1f0;
+  border-radius: 25px;
+  padding: 10px;
+  text-align: center;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.quiz-options button.selected,
+.quiz-options button:hover {
+  background: #d8b4ff;
+  color: #fff;
+}
+
+#score-progress {
+  height: 15px;
+  border-radius: 8px;
+  background: #b28bff;
+  width: 0%;
+  transition: 0.3s;
+}
+
+/* Sertifika */
+#level-code {
+  font-family: 'Archivo Black', sans-serif;
+  font-size: 60px;
+  color: #6a4fcf;
+}
+
+#level-era {
+  font-size: 28px;
+  color: #9a75ff;
+}
+
+#custom-message {
+  font-size: 16px;
+  color: #555;
+}
+
+.golden-note {
+  font-size: 14px;
+  color: #6a4fcf;
+  text-align: center;
+  margin: 15px 0;
+}
+
+#answers div.correct {color: #6a4fcf; font-weight: 600;}
+#answers div.wrong {color: #ff4c4c; font-weight: 600;}
