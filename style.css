@@ -1,116 +1,32 @@
-body {
-  font-family: 'Poppins', sans-serif;
-  background: #f8f0ff;
-  margin: 0;
-  padding: 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  min-height: 100vh;
-}
+/* FONTS */
+body { font-family: 'Poppins', sans-serif; margin:0; padding:0; background:#f8f4fc; display:flex; justify-content:center; align-items:flex-start; min-height:100vh; }
+.screen { width:100%; display:flex; justify-content:center; align-items:flex-start; padding:30px; }
+.card { background:white; border-radius:12px; padding:25px; max-width:700px; width:100%; box-shadow:0 2px 15px rgba(0,0,0,0.05); margin-bottom:30px; }
+.title { text-align:center; color:#5b3cc4; margin-bottom:15px; font-weight:700; }
+.note { background:#f3e8ff; padding:15px; border-radius:10px; margin-bottom:15px; color:#3b1d75; }
+input[type="text"] { width:90%; padding:12px; margin-bottom:15px; border-radius:8px; border:1px solid #ccc; font-size:16px; display:block; margin-left:auto; margin-right:auto; }
+button, .twitter-btn, .golden-disc-btn { cursor:pointer; border:none; border-radius:8px; padding:10px 20px; font-weight:600; margin-top:10px; text-decoration:none; display:inline-block; text-align:center; }
+.btn-purple { background:#b99fff; color:white; }
+.twitter-btn { background:#a583ff; color:white; }
+.golden-disc-btn { background:#ffd700; color:black; font-weight:bold; }
 
-.card {
-  background: #f3e6ff;
-  padding: 20px;
-  border-radius: 15px;
-  width: 90%;
-  max-width: 700px;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-  text-align: center;
-}
+.hidden { display:none; }
 
-.note {
-  background: #e9d4ff;
-  padding: 15px;
-  border-radius: 10px;
-  margin-bottom: 15px;
-  text-align: left;
-  font-size: 14px;
-}
+.quiz-question { background:#fff; margin:15px 0; padding:15px; border-radius:10px; }
+.quiz-question p { font-weight:600; margin-bottom:10px; }
+.quiz-options { display:flex; flex-direction:column; }
+.quiz-options button { margin:5px 0; background:#e8defc; color:#3b1d75; }
+.quiz-options button.selected { background:#5b3cc4; color:white; }
 
-input[type="text"] {
-  width: 80%;
-  padding: 10px;
-  margin: 10px 0;
-  border-radius: 8px;
-  border: 1px solid #ccc;
-  font-size: 16px;
-}
+#score-bar-container { width:100%; background:#ddd; border-radius:10px; height:12px; margin-bottom:20px; }
+#score-progress { width:0%; height:100%; background:#b99fff; border-radius:10px; transition:0.3s; }
 
-button {
-  padding: 10px 20px;
-  margin: 5px;
-  border: none;
-  border-radius: 10px;
-  background: #d8b6ff;
-  color: #fff;
-  font-weight: 600;
-  cursor: pointer;
-  transition: 0.3s;
-}
+.result-card h1 { font-family: 'Archivo Black', sans-serif; font-size:60px; margin:5px 0; }
+.result-card h2 { font-size:28px; margin:5px 0; }
+.certificate-note { background:#f3e8ff; padding:15px; border-radius:10px; text-align:center; font-weight:600; margin-top:15px; }
 
-button:hover {
-  background: #b688ff;
-}
-
-.quiz-question {
-  background: #ffffff;
-  padding: 15px;
-  border-radius: 10px;
-  margin: 10px 0;
-  text-align: left;
-}
-
-.quiz-options button {
-  display: inline-block;
-  margin: 5px 5px 0 0;
-  width: calc(50% - 10px);
-  background: #f0d4ff;
-}
-
-.quiz-options button.selected {
-  background: #b688ff;
-  color: #fff;
-}
-
-#score-bar {
-  width: 100%;
-  background: #ddd;
-  height: 15px;
-  border-radius: 10px;
-  margin-bottom: 15px;
-}
-
-#score-progress {
-  height: 100%;
-  width: 0%;
-  background: #b688ff;
-  border-radius: 10px;
-  transition: 0.3s;
-}
-
-.level-code {
-  font-family: 'Archivo Black', sans-serif;
-  font-size: 64px;
-  color: #7f00ff;
-}
-
-.level-era {
-  font-size: 28px;
-  margin: 5px 0;
-}
-
-.custom-message {
-  font-size: 16px;
-}
-
-.golden-disc-btn {
-  display: inline-block;
-  margin-top: 15px;
-  padding: 10px 20px;
-  border-radius: 10px;
-  background: #d8b6ff;
-  color: #fff;
-  text-decoration: none;
-  font-weight: bold;
-}
+#answers { margin-top:15px; }
+#answers .answer-question { margin-bottom:15px; }
+#answers .answer-question div { padding:6px 10px; border-radius:6px; margin:3px 0; }
+#answers .correct { background:#c6f6d5; color:#22543d; }
+#answers .wrong { background:#fed7d7; color:#742a2a; }
