@@ -17,141 +17,8 @@ const questions = [
     image: "https://i.imgur.com/sxS47tn_d.webp?maxwidth=760&fidelity=grand",
     options: ["yoonginin rap sarkılarını yırtıp evden atmıstır", "jungkook taklidini yaptıgı için ona kızmıstır", "run bts bölümünde yoongiye cicek yollamıstır", "yoongiden izinsiz onu sirkete kaydetmistir"],
     correct: 0
-  },
-  {
-    text: "bunu duyan jungkook",
-    image: "https://i.imgur.com/1VD9oD7_d.webp?maxwidth=760&fidelity=grand",
-    options: ["en yakın meteorologla görüsüp yagmuru durdurmustur", "yagmur yagmayan bir sehire ucak kiralamıstır", "gökyüzü temalı otelde yemege götürmüstür", "nasayla görüsüp hava durumunu degistirmistir"],
-    correct: 3
-  },
-  {
-    text: "taehyung ne diyor",
-    image: "https://i.imgur.com/v2WtkhB_d.webp?maxwidth=760&fidelity=grand",
-    options: ["kamerayı cevirin", "şimşime", "sakallarımı kesecegim", "army komik degil"],
-    correct: 1
-  },
-  {
-    text: "apple music en cok dinlenen sarkı listesinde butter kacıncı olmustur",
-    image: "",
-    options: ["33", "34", "35", "36"],
-    correct: 1
-  },
-  {
-    text: "bts binası hangi sehirdedir?",
-    image: "",
-    options: ["ankara", "istanbul", "antalya", "izmir"],
-    correct: 0
-  },
-  {
-    text: "kız hangi şarkıyı söylüyor?",
-    image: "https://i.imgur.com/mRSxNsZ_d.webp?maxwidth=760&fidelity=grand",
-    options: ["super tuna", "dsylm", "moon", "the astronaut"],
-    correct: 2
-  },
-  {
-    text: "gercek neler?",
-    image: "https://i.imgur.com/84SOdOX_d.webp?maxwidth=760&fidelity=grand",
-    options: ["pjms", "jimin lovers", "jiminie girls", "jiminette"],
-    correct: 3
-  },
-  {
-    text: "namjoon ve jin weverse de ne icin kavga etmistir",
-    image: "",
-    options: ["mor kalp emojisi", "prenses tacı", "yıldızlı mikrofon", "takım elbise"],
-    correct: 1
-  },
-
-  {
-    text: "jungkookun ismini aradıgı çikolata hangisidir ",
-    image: "",
-    options: ["biscolata", "sourpatch", "panchoa", "kancho"],
-    correct: 3
-  },
-  {
-    text: "bu adam kim?",
-    image: "https://i.imgur.com/bZj0bup_d.webp?maxwidth=760&fidelity=grand",
-    options: ["murat boz", "kuzey tekinoglu", "burak özcivit", "kobra murat"],
-    correct: 2
-  },
-  {
-    text: "hangi sarkı",
-    image: "https://i.imgur.com/JpquYEv_d.webp?maxwidth=760&fidelity=grand",
-    options: ["my universe", "black swan", "dynamite", "yet to come"],
-    correct: 1
-  },
-  {
-    text: "hoseok atesle uyanınca söylediği ilk sey ne olmustur",
-    image: "",
-    options: ["üyelere mesaj atmalıyım", "mona lisayı tiktok'a yüklemeliyim", "danscılara talimat vermeliyim", "sarkı kaydı almalıyım"],
-    correct: 1
-  },
-  {
-    text: "en cok yanıt alan bts tiviti nedir?",
-    image: "",
-    options: ["gokyuzu yoongi", "bad guy jungkook", "öpücük jungkook", "askerlik dönüsü taejoon"],
-    correct: 0
-  },
-  {
-    text: "grammy gecesi t-army ile shiplenen ülke",
-    image: "",
-    options: ["cinli", "koreli", "brezilyalı", "finlandiyalı"],
-    correct: 2
-  },
-  {
-    text: "",
-    image: "https://i.imgur.com/3hEQQn3_d.webp?maxwidth=760&fidelity=grand",
-    options: ["boksör jungkook", "airplane", "sweet dreams", "weverse en cok begeni alan resim"],
-    correct: 1
-  },
-  {
-    text: "ptd live albümü en yüksek cıkıs yapan kacıncı live albümdür",
-    image: "",
-    options: ["1", "2", "3", "4"],
-    correct: 0
-  },
-  {
-    text: "fotografta ne var",
-    image: "https://i.imgur.com/3j3vLv8_d.webp?maxwidth=760&fidelity=grand",
-    options: ["konser cıkısı bangtan", "yn nin korumaları", "unlu iş adamları", "gelin odasını basan sagdıclar"],
-    correct: 3
-  },
-  {
-    text: "taehyungun yediği çikolata hangisidir",
-    image: "",
-    options: ["tuavna", "tuana", "tuvana", "tuvaana"],
-    correct: 2
-  },
-
-  {
-    text: "kimin evi",
-    image: "https://i.imgur.com/G0nr38G_d.webp?maxwidth=760&fidelity=grand",
-    options: ["jungkook", "taehyung", "jimin", "namjoon"],
-    correct: 2
-  },
-  {
-    text: "bu kız taehyungun neyi",
-    image: "https://i.imgur.com/tUx30aT_d.webp?maxwidth=760&fidelity=grand",
-    options: ["kuzeni", "kres arkadası", "ablası", "komsusu"],
-    correct: 1
-  },
-  {
-    text: "bu labubu kimin",
-    image: "https://i.imgur.com/c8WUPU9_d.webp?maxwidth=760&fidelity=grand",
-    options: ["namjoon", "hoseok", "taehyung", "seokjin"],
-    correct: 0
-  },
-  {
-    text: "taehyung neden halktv ye cıktı?",
-    image: "",
-    options: ["yayında habercilik taklidi yaptıgı için", "türk çikolata gösterdiği için", "kore üniversite sınavı için", "yayında türkiye dediği için"],
-    correct: 2
-  },
-  {
-    text: "jongini nereye sikayet ettik",
-    image: "https://i.imgur.com/UCB3urk_d.webp?maxwidth=760&fidelity=grand",
-    options: ["savunma bakanlıgı", "cimer", "kore türkiye elciligi", "iç isleri bakanlıgı"],
-    correct: 0
   }
+  // buraya istediğin kadar soru ekleyebilirsin
 ];
 
 /************ ELEMENTS ************/
@@ -163,11 +30,29 @@ const quizForm = document.getElementById("quiz-form");
 const finishBtn = document.getElementById("finish-btn");
 const scoreProgress = document.getElementById("score-progress");
 const answersDiv = document.getElementById("answers");
+const usernameInput = document.getElementById("username");
 
 let userAnswers = {};
 
-/************ START ************/
+/************ START BUTTON ************/
 startBtn.onclick = () => {
+
+  // 🔒 Tekrar giriş engeli
+  if (localStorage.getItem("visited")) {
+    alert("Bir kere giriş yaptın aşkım 💅🏻\nBir daha giremezsin.");
+    return;
+  }
+
+  // İsim boşsa uyar
+  const name = usernameInput.value.trim();
+  if (!name) {
+    alert("Lütfen ismini gir aşkım 💅🏻");
+    return;
+  }
+
+  localStorage.setItem("visited", "true");
+  localStorage.setItem("username", name); // ismi sakla
+
   startScreen.classList.add("hidden");
   quizScreen.classList.remove("hidden");
   renderQuestions();
@@ -181,7 +66,7 @@ function renderQuestions() {
     div.className = "quiz-question";
     div.innerHTML = `
       <p>${q.text}</p>
-      <img src="${q.image}" class="question-img">
+      ${q.image ? `<img src="${q.image}" class="question-img">` : ""}
       <div class="quiz-options">
         ${q.options.map((opt, j) =>
           `<button type="button" onclick="selectOption(${i}, ${j}, this)">${opt}</button>`
@@ -192,7 +77,7 @@ function renderQuestions() {
   });
 }
 
-/************ SELECT ************/
+/************ SELECT OPTION ************/
 window.selectOption = (qIndex, optIndex, btn) => {
   userAnswers[qIndex] = optIndex;
   btn.parentElement.querySelectorAll("button").forEach(b => b.classList.remove("selected"));
@@ -204,40 +89,60 @@ function updateScoreBar() {
   scoreProgress.style.width = `${(Object.keys(userAnswers).length / questions.length) * 100}%`;
 }
 
-/************ FINISH ************/
+/************ FINISH BUTTON ************/
 finishBtn.onclick = () => {
   quizScreen.classList.add("hidden");
   resultScreen.classList.remove("hidden");
 
   let score = 0;
+  let wrong = 0;
+  let blank = 0;
+
   questions.forEach((q, i) => {
-    if (userAnswers[i] === q.correct) score++;
+    if (userAnswers[i] === undefined) {
+      blank++;
+    } else if (userAnswers[i] === q.correct) {
+      score++;
+    } else {
+      wrong++;
+    }
   });
 
-  const level = getLevel(score);
+  const level = getLevel(score, questions.length);
+  const name = localStorage.getItem("username") || "ARMY";
 
-  document.getElementById("level-code").innerText = level.code;
-  document.getElementById("level-era").innerText = level.era;
-  document.getElementById("custom-message").innerText = level.message;
+  document.getElementById("level-code").innerText = `${level.code}`;
+  document.getElementById("level-era").innerText = `${level.era}`;
+  document.getElementById("custom-message").innerHTML = `
+    ${level.message} <br>
+    <strong>Doğru:</strong> ${score} <br>
+    <strong>Yanlış:</strong> ${wrong} <br>
+    <strong>Boş:</strong> ${blank}
+  `;
+
+  // isim ve sertifika üst kısmı
+  document.getElementById("level-code").insertAdjacentHTML("beforebegin", `<h2 style="text-align:center; margin-bottom:10px;">~"${name}" T-ARMY Cehennemi Sertikası~</h2>`);
 
   document.getElementById("share-btn").onclick = () => {
-    window.open(`https://twitter.com/intent/tweet?text=T-ARMY Cehennemi Quizi sonucum: ${level.code} – ${level.era}`);
+    window.open(`https://twitter.com/intent/tweet?text=${name} T-ARMY Cehennemi Quizi sonucum: ${level.code} – ${level.era}`);
   };
 
   document.getElementById("show-answers-btn").onclick = showAnswers;
 };
 
-/************ LEVEL ************/
-function getLevel(score) {
-  if (score >= 23) return { code: "C2", era: "legacy era", message: "senin bir üst seviyen hoseok abla boyle devam" };
-  if (score >= 22) return { code: "C1", era: "prime era", message: "abla bangtan a dediği an siteye damlamıssın" };
-  if (score >= 18) return { code: "B2", era: "icon era", message: "girl!!! ates ediyosun" };
-  if (score >= 15) return { code: "B1", era: "rising era", message: "ortalama bir hakimiyet.. calısılması lazım" };
-  if (score >= 10) return { code: "A2", era: "rookie era", message: "bir seylere hakimiz ama hala eksikler var" };
- if (score >= 5) return { code: "A1", era: "debut era", message: "stan twtda hic mi bulunmadın knk" };
+/************ LEVELS ************/
+function getLevel(score, total) {
+  const percent = (score / total) * 100;
+
+  if (percent >= 90) return { code: "C2", era: "legacy era", message: "senin bir üst seviyen hoseok. abla boyle devam💅🏻" };
+  if (percent >= 80) return { code: "C1", era: "prime era", message: "abla bangtan a dediği an siteye damlamıssın" };
+  if (percent >= 70) return { code: "B2", era: "icon era", message: "girl!!! ates ediyosun" };
+  if (percent >= 60) return { code: "B1", era: "rising era", message: "ortalama bir hakimiyet.. calısılması lazım" };
+  if (percent >= 40) return { code: "A2", era: "rookie era", message: "bir seylere hakimiz ama hala eksikler var" };
+  return { code: "A1", era: "debut era", message: "stan twtda hic mi bulunmadın knk" };
 }
 
-/************ ANSWERS ************/
+/************ SHOW ANSWERS ************/
 function showAnswers() {
   answersDiv.classList.remove("hidden");
   answersDiv.innerHTML = "";
@@ -258,13 +163,4 @@ function showAnswers() {
 
     answersDiv.appendChild(div);
   });
-  }
-  // siteye sadece bir kez girme kontrolü
-if (localStorage.getItem("visited")) {
-  document.body.innerHTML = `
-    <h1>erişim engellendi</h1>
-    <p>bu siteye daha önce girdin</p>
-  `;
-} else {
-  localStorage.setItem("visited", "true");
 }
