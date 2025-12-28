@@ -105,20 +105,22 @@ button:hover {
   margin-bottom: 10px;
 }
 
-/* ===== QUIZ OPTIONS (ALT ALTA VE OVAL BUTON) ===== */
+/* ===== QUIZ OPTIONS (ALT ALTA, EŞİT GENİŞ, OVAL, BEYAZ-BASINCA LILA) ===== */
 .quiz-options {
   display: flex;
-  flex-direction: column;
+  flex-direction: column;  /* alt alta diz */
   gap: 10px;
   align-items: center;
+  width: 100%;             /* kapsayıcı genişliği */
 }
 
 .quiz-options button {
-  width: 80%;             /* genişlik */
-  border-radius: 50px;    /* oval kenar */
-  background-color: #fff;  /* beyaz arkaplan */
-  color: #000;            /* yazı siyah */
-  border: 2px solid #ccc; /* hafif çerçeve */
+  width: 100%;              /* butonlar eşit genişlikte */
+  max-width: 500px;         /* istersen maksimum genişlik */
+  border-radius: 50px;      /* oval kenar */
+  background-color: #fff;   /* beyaz arkaplan */
+  color: #000;              /* yazı siyah */
+  border: 2px solid #ccc;   /* hafif çerçeve */
   padding: 14px 0;
   font-size: 16px;
   cursor: pointer;
@@ -127,7 +129,7 @@ button:hover {
 
 .quiz-options button:hover,
 .quiz-options button:active {
-  background-color: #9d62bc; /* lila arkaplan basınca */
+  background-color: #9d62bc; /* basınca lila arkaplan */
   color: #fff;               /* yazı beyaz */
 }
 
