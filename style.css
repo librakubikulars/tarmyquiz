@@ -7,7 +7,7 @@
 }
 
 body {
-  background: linear-gradient(to right, #ffafbd, #ffc3a0);
+  background: linear-gradient(to right, #b57edc, #d7b4f2); /* Lila tonları korundu */
   display: flex;
   justify-content: center;
   align-items: center;
@@ -69,18 +69,21 @@ button:hover {
 
 /* ===== START BUTTON ÖZEL ===== */
 #start-btn {
-  background-color: #1da1f2 !important; /* Twitter mor-mavi tonuna yakın */
-  color: #fff;
-  margin-top: 15px;  /* input alanının altına boşluk */
-  width: 50%;        /* isteğe göre genişlik */
-  border-radius: 25px;
-  padding: 12px 0;
-  font-weight: 600;
-  transition: all 0.3s ease;
+  background-color: #1da1f2 !important; /* Twitter tarzı mor-mavi */
+  color: #fff !important;
+  margin-top: 15px;           /* input alanının altına boşluk */
+  width: 80%;                 /* genişliği artırdım */
+  border-radius: 50px;        /* kenarları oval */
+  padding: 14px 0;            /* dikey padding biraz artırıldı */
+  font-weight: 700;
+  font-size: 18px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;         /* ortaladık */
 }
 
 #start-btn:hover {
-  background-color: #0d95e8 !important; /* hover biraz koyu */
+  background-color: #0d95e8 !important; /* hover koyu */
 }
 
 /* ===== QUIZ SCREEN ===== */
@@ -192,5 +195,9 @@ button.selected {
 
   .quiz-options button {
     flex: 1 1 100%;
+  }
+
+  #start-btn {
+    width: 90%; /* mobilde genişliği artır */
   }
 }
