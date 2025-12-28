@@ -7,7 +7,7 @@
 }
 
 body {
-  background: linear-gradient(to right, #d8b4f7, #eac8ff); /* Daha açık lila */
+  background: linear-gradient(to right, #e9d6ff, #f5e6ff); /* Açık lila arka plan */
   display: flex;
   justify-content: center;
   align-items: center;
@@ -34,7 +34,7 @@ body {
 /* ===== TITLE ===== */
 .title {
   font-family: 'Archivo Black', sans-serif;
-  color: #000; /* Siyah başlık */
+  color: #000 !important; /* Başlık kesin siyah */
   font-size: 32px;
   margin-bottom: 20px;
 }
@@ -52,7 +52,7 @@ body {
 
 /* ===== BUTTONS ===== */
 button {
-  background-color: #ff6f91;
+  background-color: #000000;
   color: #fff;
   border: none;
   padding: 12px 25px;
@@ -64,13 +64,13 @@ button {
 }
 
 button:hover {
-  background-color: #ff3c6e;
+  background-color: #000000;
 }
 
 /* ===== START BUTTON ÖZEL ===== */
 #start-btn {
-  background-color: #8000ff !important; /* mor renk */
-  color: #000 !important;               /* yazılar siyah */
+  background-color: #550080 !important; /* koyu lila renk */
+  color: #FFFFFF !important;               /* yazılar beyaz */
   margin-top: 15px;           /* input’un altına boşluk */
   width: 80%;                 /* genişlik */
   border-radius: 50px;        /* oval kenar */
@@ -83,7 +83,7 @@ button:hover {
 }
 
 #start-btn:hover {
-  background-color: #6600cc !important; /* hover koyu mor */
+  background-color: #9d62bc !important; /* hover koyu mor */
 }
 
 /* ===== QUIZ SCREEN ===== */
