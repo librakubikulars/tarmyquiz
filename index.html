@@ -9,17 +9,34 @@
 </head>
 <body>
 
-<!-- START SCREEN -->
-<div id="start-screen" class="card">
-  <h1 class="title">T-ARMY Cehennemi Quizi</h1>
-  <input id="username" type="text" placeholder="İsminizi girin">
-  <button id="start-btn">Giriş Yap</button>
+<!-- GİRİŞ EKRANI -->
+<div id="start-screen" class="screen">
+    <h1 class="title">T-ARMY Cehennemi Quizi</h1>
+    <input type="text" id="username" placeholder="İsminizi girin">
+    <button id="start-btn" class="big-btn">Giriş Yap</button>
 </div>
 
-<!-- QUIZ SCREEN -->
-<div id="quiz-screen" class="card hidden">
-  <div id="quiz-form"></div>
-  <button id="finish-btn">Testi Bitir</button>
+<!-- QUIZ EKRANI -->
+<div id="quiz-screen" class="screen hidden">
+    <div id="question-counter"></div>
+    <div id="quiz-form"></div>
+    <div id="score-bar-container">
+        <div id="score-progress"></div>
+    </div>
+    <button id="finish-btn" class="big-btn">Testi Bitir</button>
+</div>
+
+<!-- SONUÇ / SERTİFİKA EKRANI -->
+<div id="result-screen" class="screen hidden">
+    <h2 id="cert-title"></h2>
+    <h1 id="level-code"></h1>
+    <h2 id="level-era"></h2>
+    <p id="custom-message"></p>
+    <p id="score-details"></p>
+    <button id="golden-btn" class="golden-btn">Golden Disc Award'da Jin için Oy Verin 💛</button>
+    <button id="share-btn" class="big-btn">Twitter'da Paylaş</button>
+    <button id="show-answers-btn" class="big-btn">Doğru Cevapları Göster</button>
+    <div id="answers" class="hidden"></div>
 </div>
 
 <script src="script.js"></script>
