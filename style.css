@@ -7,7 +7,7 @@
 }
 
 body {
-  background: linear-gradient(to right, #b57edc, #d7b4f2); /* Lila tonları korundu */
+  background: linear-gradient(to right, #b57edc, #d7b4f2); /* Arka plan lila */
   display: flex;
   justify-content: center;
   align-items: center;
@@ -69,12 +69,12 @@ button:hover {
 
 /* ===== START BUTTON ÖZEL ===== */
 #start-btn {
-  background-color: #1da1f2 !important; /* Twitter tarzı mor-mavi */
+  background-color: #8000ff !important; /* mor renk */
   color: #fff !important;
-  margin-top: 15px;           /* input alanının altına boşluk */
-  width: 80%;                 /* genişliği artırdım */
-  border-radius: 50px;        /* kenarları oval */
-  padding: 14px 0;            /* dikey padding biraz artırıldı */
+  margin-top: 15px;           /* input’un altına boşluk */
+  width: 80%;                 /* genişlik */
+  border-radius: 50px;        /* oval kenar */
+  padding: 14px 0;            /* dikey padding */
   font-weight: 700;
   font-size: 18px;
   display: block;
@@ -83,7 +83,7 @@ button:hover {
 }
 
 #start-btn:hover {
-  background-color: #0d95e8 !important; /* hover koyu */
+  background-color: #6600cc !important; /* hover koyu mor */
 }
 
 /* ===== QUIZ SCREEN ===== */
