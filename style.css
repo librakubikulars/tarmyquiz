@@ -216,21 +216,23 @@ button.selected {
   }
 }
 
-/* ===== GOLDEN DISC BUTTON (SADECE BU) ===== */
+/* ===== GOLDEN DISC BUTTON (TWITTER & CEVAPLAR STİLİNDE, SADECE SARI) ===== */
 #golden-disc-btn {
   display: inline-block;
-  margin-top: 15px;
-  padding: 14px 28px;
+  margin: 10px 5px;
+  padding: 12px 25px;
   background-color: #ffcc00;   /* SARI */
-  color: #000;
-  border-radius: 50px;
-  text-decoration: none;
-  font-weight: 700;
+  color: #000;                /* siyah yazı */
+  border: none;
+  border-radius: 12px;        /* diğer butonlarla aynı */
   font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  text-decoration: none;
   transition: all 0.3s ease;
 }
 
 #golden-disc-btn:hover {
-  background-color: #ffb300;
+  background-color: #ffb300;  /* hover biraz koyu sarı */
   color: #000;
 }
