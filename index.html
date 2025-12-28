@@ -1,44 +1,49 @@
 <!DOCTYPE html>
 <html lang="tr">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>T-ARMY Cehennemi Quizi</title>
-<link rel="stylesheet" href="style.css">
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Archivo+Black&display=swap" rel="stylesheet">
+  <meta charset="UTF-8">
+  <title>T-ARMY Cehennemi Quizi</title>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="./style.css">
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Archivo+Black&display=swap" rel="stylesheet">
 </head>
+
 <body>
 
-<!-- GİRİŞ EKRANI -->
-<div id="start-screen" class="screen">
+  <!-- START SCREEN -->
+  <div id="start-screen" class="card">
     <h1 class="title">T-ARMY Cehennemi Quizi</h1>
-    <input type="text" id="username" placeholder="İsminizi girin">
-    <button id="start-btn" class="big-btn">Giriş Yap</button>
-</div>
+    <input id="username" type="text" placeholder="Lütfen isminizi girin">
+    <button id="start-btn">Giriş</button>
+  </div>
 
-<!-- QUIZ EKRANI -->
-<div id="quiz-screen" class="screen hidden">
-    <div id="question-counter"></div>
-    <div id="quiz-form"></div>
-    <div id="score-bar-container">
-        <div id="score-progress"></div>
+  <!-- QUIZ SCREEN -->
+  <div id="quiz-screen" class="card hidden">
+    <div id="score-bar">
+      <div id="score-progress"></div>
     </div>
-    <button id="finish-btn" class="big-btn">Testi Bitir</button>
-</div>
 
-<!-- SONUÇ / SERTİFİKA EKRANI -->
-<div id="result-screen" class="screen hidden">
-    <h2 id="cert-title"></h2>
-    <h1 id="level-code"></h1>
-    <h2 id="level-era"></h2>
-    <p id="custom-message"></p>
-    <p id="score-details"></p>
-    <button id="golden-btn" class="golden-btn">Golden Disc Award'da Jin için Oy Verin 💛</button>
-    <button id="share-btn" class="big-btn">Twitter'da Paylaş</button>
-    <button id="show-answers-btn" class="big-btn">Doğru Cevapları Göster</button>
+    <form id="quiz-form"></form>
+    <button id="finish-btn">Testi Bitir</button>
+  </div>
+
+  <!-- RESULT SCREEN -->
+  <div id="result-screen" class="card hidden">
+    <div id="level-code"></div>
+    <div id="level-era"></div>
+    <div id="custom-message"></div>
+
+    <button id="share-btn">Twitter’da Paylaş</button>
+    <button id="show-answers-btn">Doğru Cevapları Göster</button>
+
     <div id="answers" class="hidden"></div>
-</div>
+  </div>
 
-<script src="script.js"></script>
+  <!-- JS (EN ALTA!) -->
+  <script src="./script.js"></script>
+
 </body>
 </html>
