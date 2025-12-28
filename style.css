@@ -7,7 +7,7 @@
 }
 
 body {
-  background: linear-gradient(to right, #b57edc, #d7b4f2); /* Arka plan lila */
+  background: linear-gradient(to right, #d8b4f7, #eac8ff); /* Daha açık lila */
   display: flex;
   justify-content: center;
   align-items: center;
@@ -34,7 +34,7 @@ body {
 /* ===== TITLE ===== */
 .title {
   font-family: 'Archivo Black', sans-serif;
-  color: #ff6f91;
+  color: #000; /* Siyah başlık */
   font-size: 32px;
   margin-bottom: 20px;
 }
@@ -44,7 +44,7 @@ body {
   padding: 10px 15px;
   width: 70%;
   border-radius: 10px;
-  border: 2px solid #ff6f91;
+  border: 2px solid #000; /* Siyah çerçeve */
   margin-bottom: 20px;
   font-size: 16px;
   outline: none;
