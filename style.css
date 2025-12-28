@@ -236,3 +236,8 @@ button.selected {
   background-color: #ffb300;  /* hover biraz koyu sarı */
   color: #000;
 }
+#golden-disc-btn {
+  position: relative;
+  z-index: 999;
+  pointer-events: auto;
+}
