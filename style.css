@@ -1,58 +1,44 @@
-/* ===== GLOBAL ===== */
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-  font-family: 'Poppins', sans-serif;
-}
-
 body {
-  background: linear-gradient(to right, #ffafbd, #ffc3a0);
+  font-family: 'Poppins', sans-serif;
+  background-color: #f4f4f9;
   display: flex;
   justify-content: center;
   align-items: center;
   min-height: 100vh;
+  margin: 0;
 }
 
-/* ===== CARD ===== */
 .card {
   background-color: #fff;
+  border-radius: 15px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
   padding: 30px;
-  border-radius: 20px;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.15);
-  width: 90%;
-  max-width: 600px;
-  text-align: center;
-  position: relative;
+  width: 400px;
+  max-width: 90%;
 }
 
-/* HIDDEN */
 .hidden {
   display: none;
 }
 
-/* ===== TITLE ===== */
 .title {
   font-family: 'Archivo Black', sans-serif;
-  color: #ff6f91;
-  font-size: 32px;
+  font-size: 28px;
+  text-align: center;
   margin-bottom: 20px;
 }
 
-/* ===== INPUT ===== */
-#username {
-  padding: 10px 15px;
-  width: 70%;
+input[type="text"] {
+  width: 100%;
+  padding: 12px 15px;
+  margin-bottom: 20px;
   border-radius: 10px;
-  border: 2px solid #ff6f91;
-  margin-bottom: 20px;
+  border: 1px solid #ccc;
   font-size: 16px;
-  outline: none;
 }
 
-/* ===== BUTTONS ===== */
 button {
-  background-color: #ff6f91;
+  background-color: #ff6f91; /* genel buton rengi pembe */
   color: #fff;
   border: none;
   padding: 12px 25px;
@@ -63,118 +49,73 @@ button {
   margin: 10px 5px;
 }
 
-button:hover {
-  background-color: #ff3c6e;
+/* Sadece en baştaki buton */
+#start-btn {
+  background-color: gray;  /* gri renk */
+  color: #fff;
+  margin-top: 20px;        /* altta boşluk */
 }
 
-/* ===== QUIZ SCREEN ===== */
+#start-btn:hover {
+  background-color: purple; /* hover olduğunda mor */
+}
+
 .quiz-question {
   margin-bottom: 25px;
 }
 
-.quiz-question p {
-  font-weight: 600;
-  font-size: 18px;
-  margin-bottom: 10px;
-}
-
-.question-img {
+.quiz-question img.question-img {
   width: 100%;
-  max-height: 250px;
-  object-fit: cover;
-  border-radius: 15px;
-  margin-bottom: 10px;
+  border-radius: 10px;
+  margin-top: 10px;
 }
 
 .quiz-options {
   display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-  justify-content: center;
+  flex-direction: column;
+  margin-top: 10px;
 }
 
 .quiz-options button {
-  flex: 1 1 45%;
-  font-size: 14px;
-  padding: 10px;
+  margin: 5px 0;
 }
 
-/* SELECTED OPTION */
 button.selected {
-  background-color: #ffb347;
-  color: #fff;
-  transform: scale(1.05);
+  border: 2px solid #333;
 }
 
-/* ===== SCORE BAR ===== */
 #score-bar {
-  height: 12px;
-  background-color: #f0f0f0;
-  border-radius: 10px;
+  background-color: #eee;
+  height: 10px;
+  border-radius: 5px;
   margin-bottom: 20px;
-  overflow: hidden;
+  width: 100%;
 }
 
 #score-progress {
   height: 100%;
-  background-color: #ff6f91;
-  width: 0%;
-  transition: width 0.3s ease;
-}
-
-/* ===== RESULT SCREEN ===== */
-#level-code h1 {
-  color: #ff6f91;
-}
-
-#level-era h2 {
-  color: #ff3c6e;
-  margin-bottom: 10px;
-}
-
-#custom-message p {
-  margin: 5px 0;
-}
-
-/* ===== ANSWERS ===== */
-#answers {
-  margin-top: 20px;
-  text-align: left;
+  background-color: #6a1b9a;
+  width: 0;
+  border-radius: 5px;
+  transition: width 0.3s;
 }
 
 .answer-question {
   margin-bottom: 15px;
 }
 
-.answer-question p {
-  font-weight: bold;
-  margin-bottom: 5px;
-}
-
-.answer-option {
-  padding: 8px 12px;
-  margin-bottom: 5px;
-  border-radius: 8px;
-  background-color: #f0f0f0;
-}
-
 .answer-option.correct {
   background-color: #4caf50;
   color: #fff;
+  padding: 5px;
+  border-radius: 5px;
+  margin-top: 2px;
 }
 
 .answer-option.wrong {
   background-color: #f44336;
   color: #fff;
-}
-
-/* ===== MOBILE ===== */
-@media (max-width: 500px) {
-  #username {
-    width: 90%;
-  }
-
-  .quiz-options button {
-    flex: 1 1 100%;
-  }
+  padding: 5px;
+  border-radius: 5px;
+  margin-top: 2px;
 }
