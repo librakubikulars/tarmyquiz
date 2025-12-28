@@ -165,10 +165,10 @@ const usernameInput = document.getElementById("username");
 
 let userAnswers = {};
 
-/************ START BUTTON ************/
+/************ START ************/
 startBtn.onclick = () => {
   if (localStorage.getItem("visited")) {
-    alert("Bir kere giriş yaptın aşkım 💅🏻\nBir daha giremezsin.");
+    alert("Bir kere giriş yaptın aşkım 💅🏻");
     return;
   }
 
@@ -186,38 +186,32 @@ startBtn.onclick = () => {
   renderQuestions();
 };
 
-/************ RENDER QUESTIONS ************/
+/************ RENDER ************/
 function renderQuestions() {
   quizForm.innerHTML = "";
   questions.forEach((q, i) => {
-    const div = document.createElement("div");
-    div.className = "quiz-question";
-    div.innerHTML = `
-      <p>${q.text}</p>
-      ${q.image ? `<img src="${q.image}" class="question-img">` : ""}
-      <div class="quiz-options">
-        ${q.options.map((opt, j) =>
-          `<button type="button" onclick="selectOption(${i}, ${j}, this)">${opt}</button>`
-        ).join("")}
-      </div>
-    `;
-    quizForm.appendChild(div);
+    quizForm.innerHTML += `
+      <div class="quiz-question">
+        <p>${q.text}</p>
+        ${q.image ? `<img src="${q.image}" class="question-img">` : ""}
+        <div class="quiz-options">
+          ${q.options.map((o, j) =>
+            `<button type="button" onclick="selectOption(${i},${j},this)">${o}</button>`
+          ).join("")}
+        </div>
+      </div>`;
   });
 }
 
-/************ SELECT OPTION ************/
-window.selectOption = (qIndex, optIndex, btn) => {
-  userAnswers[qIndex] = optIndex;
+/************ SELECT ************/
+window.selectOption = (qi, oi, btn) => {
+  userAnswers[qi] = oi;
   btn.parentElement.querySelectorAll("button").forEach(b => b.classList.remove("selected"));
   btn.classList.add("selected");
-  updateScoreBar();
+  scoreProgress.style.width = `${(Object.keys(userAnswers).length / questions.length) * 100}%`;
 };
 
-function updateScoreBar() {
-  scoreProgress.style.width = `${(Object.keys(userAnswers).length / questions.length) * 100}%`;
-}
-
-/************ FINISH BUTTON ************/
+/************ FINISH ************/
 finishBtn.onclick = () => {
   quizScreen.classList.add("hidden");
   resultScreen.classList.remove("hidden");
@@ -232,54 +226,42 @@ finishBtn.onclick = () => {
   const level = getLevel(score, questions.length);
   const name = localStorage.getItem("username") || "ARMY";
 
-  document.getElementById("level-code").innerHTML = `<h1 style="text-align:center; font-size: 64px; margin: 0;">${level.code}</h1>`;
-  document.getElementById("level-era").innerHTML = `<h2 style="text-align:center; font-size: 28px; margin: 0;">${level.era}</h2>`;
-  document.getElementById("custom-message").innerHTML = `<p style="text-align:center; font-size: 16px;">${level.message}</p><p style="text-align:center;"><strong>Doğru:</strong> ${score} | <strong>Yanlış:</strong> ${wrong} | <strong>Boş:</strong> ${blank}</p>`;
-  
-  // Sertifika başlığı
-  document.getElementById("level-code").insertAdjacentHTML("beforebegin", `<h2 style="text-align:center; margin-bottom:10px;">~"${name}" T-ARMY Cehennemi Sertikası~</h2>`);
+  document.getElementById("level-code").innerHTML =
+    `<h1 style="font-size:64px">${level.code}</h1>`;
+  document.getElementById("level-era").innerHTML =
+    `<h2>${level.era}</h2>`;
+  document.getElementById("custom-message").innerHTML =
+    `<p>${level.message}</p><p><b>Doğru:</b> ${score} | <b>Yanlış:</b> ${wrong} | <b>Boş:</b> ${blank}</p>`;
 
   document.getElementById("share-btn").onclick = () => {
-    window.open(`https://twitter.com/intent/tweet?text=${name} T-ARMY Cehennemi Quizi sonucum: ${level.code} – ${level.era}`);
+    window.open(`https://twitter.com/intent/tweet?text=${name} sonucum: ${level.code} – ${level.era}`);
   };
 
   document.getElementById("show-answers-btn").onclick = showAnswers;
 };
 
-/************ LEVELS ************/
+/************ LEVEL ************/
 function getLevel(score, total) {
-  const percent = (score / total) * 100;
-  if (percent >= 90) return { code: "C2", era: "legacy era", message: "senin bir üst seviyen hoseok abla boyle devam" };
-  if (percent >= 80) return { code: "C1", era: "prime era", message: "abla bangtan a dediği an siteye damlamıssın" };
-  if (percent >= 70) return { code: "B2", era: "icon era", message: "girl!!! ates ediyosun" };
-  if (percent >= 60) return { code: "B1", era: "rising era", message: "ortalama bir hakimiyet.. calısılması lazım" };
-  if (percent >= 40) return { code: "A2", era: "rookie era", message: "bir seylere hakimiz ama hala eksikler var" };
-  return { code: "A1", era: "debut era", message: "stan twtda hic mi bulunmadın knk" };
+  const p = (score / total) * 100;
+  if (p >= 90) return { code: "C2", era: "legacy era", message: "hoseok abla seviyesi" };
+  if (p >= 80) return { code: "C1", era: "prime era", message: "bangtan ruhu var" };
+  if (p >= 70) return { code: "B2", era: "icon era", message: "girl ateş ediyorsun" };
+  if (p >= 60) return { code: "B1", era: "rising era", message: "orta ama potansiyel var" };
+  if (p >= 40) return { code: "A2", era: "rookie era", message: "eksikler var" };
+  return { code: "A1", era: "debut era", message: "stan twt acil" };
 }
 
-/************ SHOW ANSWERS ************/
+/************ ANSWERS ************/
 function showAnswers() {
   answersDiv.classList.remove("hidden");
   answersDiv.innerHTML = "";
   questions.forEach((q, i) => {
-    const div = document.createElement("div");
-    div.className = "answer-question";
-    div.innerHTML = `<p>${q.text}</p>`;
-    q.options.forEach((opt, j) => {
-      const optDiv = document.createElement("div");
-      optDiv.className = "answer-option";
-      if (j === q.correct) optDiv.classList.add("correct");
-      if (userAnswers[i] === j && j !== q.correct) optDiv.classList.add("wrong");
-      optDiv.innerText = opt;
-      div.appendChild(optDiv);
-    });
-    answersDiv.appendChild(div);
+    answersDiv.innerHTML += `
+      <div class="answer-question">
+        <p>${q.text}</p>
+        ${q.options.map((o, j) =>
+          `<div class="answer-option ${j === q.correct ? "correct" : userAnswers[i] === j ? "wrong" : ""}">${o}</div>`
+        ).join("")}
+      </div>`;
   });
 }
-document.getElementById("golden-disc-btn")?.addEventListener("click", function () {
-  window.open(
-    "https://www.goldendiscawardvote.com",
-    "_blank",
-    "noopener,noreferrer"
-  );
-});
