@@ -255,12 +255,12 @@ finishBtn.onclick = () => {
 /************ LEVEL ************/
 function getLevel(score, total) {
   const p = (score / total) * 100;
-  if (p >= 90) return { code: "C2", era: "legacy era", message: "hoseok abla seviyesi" };
-  if (p >= 80) return { code: "C1", era: "prime era", message: "bangtan ruhu var" };
-  if (p >= 70) return { code: "B2", era: "icon era", message: "girl ateş ediyorsun" };
+  if (p >= 90) return { code: "C2", era: "legacy era", message: "söyle söyliyim senin bi üstün hoseok " };
+  if (p >= 80) return { code: "C1", era: "prime era", message: "bangtan A demeden siteye damlamıssın abla" };
+  if (p >= 70) return { code: "B2", era: "icon era", message: "girl.. ateş ediyorsun" };
   if (p >= 60) return { code: "B1", era: "rising era", message: "orta ama potansiyel var" };
-  if (p >= 40) return { code: "A2", era: "rookie era", message: "eksikler var" };
-  return { code: "A1", era: "debut era", message: "stan twt acil" };
+  if (p >= 40) return { code: "A2", era: "rookie era", message: "eksikler var calısalım lütfen!!!" };
+  return { code: "A1", era: "debut era", message: "stan twtde +10 saat acil" };
 }
 
 /************ ANSWERS ************/
