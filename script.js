@@ -276,3 +276,10 @@ function showAnswers() {
     answersDiv.appendChild(div);
   });
 }
+document.getElementById("golden-disc-btn")?.addEventListener("click", function () {
+  window.open(
+    "https://www.goldendiscawardvote.com",
+    "_blank",
+    "noopener,noreferrer"
+  );
+});
