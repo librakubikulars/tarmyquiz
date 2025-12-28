@@ -70,20 +70,20 @@ button:hover {
 /* ===== START BUTTON ÖZEL ===== */
 #start-btn {
   background-color: #9d62bc !important; /* koyu lila renk */
-  color: #FFFFFF !important;               /* yazılar beyaz */
-  margin-top: 15px;           /* input’un altına boşluk */
-  width: 80%;                 /* genişlik */
-  border-radius: 50px;        /* oval kenar */
-  padding: 14px 0;            /* dikey padding */
+  color: #FFFFFF !important;            /* yazılar beyaz */
+  margin-top: 15px;                      /* input’un altına boşluk */
+  width: 80%;                            /* genişlik */
+  border-radius: 50px;                   /* oval kenar */
+  padding: 14px 0;                       /* dikey padding */
   font-weight: 700;
   font-size: 18px;
   display: block;
   margin-left: auto;
-  margin-right: auto;         /* ortaladık */
+  margin-right: auto;                    /* ortaladık */
 }
 
 #start-btn:hover {
-  background-color: #9d62bc !important; /* hover koyu mor */
+  background-color: #6600cc !important; /* hover koyu mor */
 }
 
 /* ===== QUIZ SCREEN ===== */
@@ -105,6 +105,7 @@ button:hover {
   margin-bottom: 10px;
 }
 
+/* ===== QUIZ OPTIONS (ALT ALTA VE OVAL BUTON) ===== */
 .quiz-options {
   display: flex;
   flex-direction: column;
@@ -113,9 +114,21 @@ button:hover {
 }
 
 .quiz-options button {
-  width: 1 1 80%;
-  font-size: 14px;
-  padding: 10px;
+  width: 80%;             /* genişlik */
+  border-radius: 50px;    /* oval kenar */
+  background-color: #fff;  /* beyaz arkaplan */
+  color: #000;            /* yazı siyah */
+  border: 2px solid #ccc; /* hafif çerçeve */
+  padding: 14px 0;
+  font-size: 16px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.quiz-options button:hover,
+.quiz-options button:active {
+  background-color: #9d62bc; /* lila arkaplan basınca */
+  color: #fff;               /* yazı beyaz */
 }
 
 /* SELECTED OPTION */
@@ -194,7 +207,7 @@ button.selected {
   }
 
   .quiz-options button {
-    flex: 1 1 100%;
+    width: 90%;
   }
 
   #start-btn {
