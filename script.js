@@ -58,7 +58,7 @@ const questions = [
     text: "bu userın olayı",
     image: "https://i.imgur.com/fY3N4ll_d.webp?maxwidth=760&fidelity=grand",
     options: ["tarmy ile iyi anlasan hintli army olması", "türk oldugu halde türk değil gibi davranması", "en cok takip edilen hesap olması", "jungkookun sac stilisti olması"],
-    correct: 2
+    correct: 1
   },
   {
     text: "gercek neler?",
