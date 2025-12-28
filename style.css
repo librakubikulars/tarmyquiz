@@ -70,7 +70,7 @@ button:hover {
 /* ===== START BUTTON ÖZEL ===== */
 #start-btn {
   background-color: #8000ff !important; /* mor renk */
-  color: #fff !important;
+  color: #000 !important;               /* yazılar siyah */
   margin-top: 15px;           /* input’un altına boşluk */
   width: 80%;                 /* genişlik */
   border-radius: 50px;        /* oval kenar */
